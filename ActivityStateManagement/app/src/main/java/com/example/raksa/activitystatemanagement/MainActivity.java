@@ -9,15 +9,21 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    TextView textView;
+    EditText editText;
+    Button button;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
-        EditText editText = (EditText) findViewById(R.id.editTextName);
-        final TextView textView = (TextView) findViewById(R.id.textView);
-        Button button = (Button) findViewById(R.id.button);
+        editText = (EditText) findViewById(R.id.editTextName);
+        textView = (TextView) findViewById(R.id.textView);
+        button = (Button) findViewById(R.id.button);
 
 
         button.setOnClickListener(new View.OnClickListener() {
