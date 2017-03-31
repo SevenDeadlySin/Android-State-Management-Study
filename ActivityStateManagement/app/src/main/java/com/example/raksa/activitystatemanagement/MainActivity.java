@@ -25,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.textView);
         button = (Button) findViewById(R.id.button);
 
+        if (savedInstanceState!=null){
+         textView.setText(savedInstanceState.getString("TEXTSAVED"));
+            editText.setText(savedInstanceState.getString("EDITTEXTSAVED"));
+        }
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,5 +38,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("TEXTSAVED",textView.getText().toString());
+        outState.putString("EDITTEXTSAVED",editText.getText().toString());
     }
 }
